@@ -17,10 +17,9 @@ def create_markup(base = None):
 
 
 bot = telebot.TeleBot(TOKEN)
-@bot.message_handler(commands = ['start', 'help'])  #обработчик команд start/help
+@bot.message_handler(commands = ['start', 'help'])
 def start(message: telebot.types.Message):
-    text = 'Введите команду : \n название исходной валюты \
- название валюты, в которую нужно перевести  <количество переводимой валюты> \n Увидеть список доступных валют: /values'
+    text = 'Введите команду : \n название исходной валюты:\n название валюты, в которую нужно перевести: \n количество переводимой валюты:\n Увидеть список доступных валют: \n /values'
     bot.send_message(message.chat.id, text)
 
 
