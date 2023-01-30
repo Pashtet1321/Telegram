@@ -1,6 +1,8 @@
 exchanges = {
     'доллар': 'USD',
     'евро': 'EUR',
-    'рубль': 'RUB'
+    'рубль': 'RUB',
+    'юань': 'CNY',
+    'фунт стерлингов, /convert': 'GBP'
 }
-TOKEN = "****************"
+TOKEN = "5999482656:AAHxMTJ6S8eqNNiVuJUJKbOffADURUfOsC8"

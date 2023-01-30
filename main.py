@@ -17,11 +17,10 @@ def create_markup(base = None):
 
 
 bot = telebot.TeleBot(TOKEN)
-
-
-@bot.message_handler(commands=['start', 'help'])
+@bot.message_handler(commands = ['start', 'help'])  #обработчик команд start/help
 def start(message: telebot.types.Message):
-    text = "Приветствие!"
+    text = 'Введите команду : \n название исходной валюты \
+ название валюты, в которую нужно перевести  <количество переводимой валюты> \n Увидеть список доступных валют: /values'
     bot.send_message(message.chat.id, text)
 
 
@@ -50,6 +49,8 @@ def sym_handler(message: telebot.types.Message, base):
     bot.send_message(message.chat.id, text)
     bot.register_next_step_handler(message, amount_handler, base, sym)
 
+
+
 def amount_handler(message: telebot.types.Message, base, sym):
     amount = message.text.split()
     try:
@@ -59,8 +60,6 @@ def amount_handler(message: telebot.types.Message, base, sym):
     else:
         text = f"Цена {amount} {base} в {sym} : {new_price}"
         bot.send_message(message.chat.id, text)
-
-
 
 bot.polling()
 
