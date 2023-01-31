@@ -62,4 +62,6 @@ def amount_handler(message: telebot.types.Message, base, sym):
 
 bot.polling()
 
+#r
+
 
