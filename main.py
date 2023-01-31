@@ -51,7 +51,7 @@ def sym_handler(message: telebot.types.Message, base):
 
 
 def amount_handler(message: telebot.types.Message, base, sym):
-    amount = message.text.split()
+    amount = message.text.strip()
     try:
         new_price = Converter.get_price(base, sym, amount)
     except APIException as e:
